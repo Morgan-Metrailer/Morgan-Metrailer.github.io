@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E. coli in White-tailed Deer | Morgan Metrailer</title>
+    <style>
+        :root {
+            --black: #000000;
+            --charcoal: #1a1a1a;
+            --white: #ffffff;
+            --off-white: #fafafa;
+            --gold: #0909FF;
+            --gold-dark: #4B0150;
+            --gold-light: #728FCE;
+            --gray: #4a4a4a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        .back-link {
+            display: inline-block;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            color: var(--gold-dark);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover { color: var(--gold); }
+        header {
+            text-align: center;
+            padding: 3rem 2rem 2.5rem;
+            background: var(--off-white);
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            border-top: 3px solid var(--gold);
+            margin-bottom: 2.5rem;
+        }
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 400;
+            color: var(--black);
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+        .project-meta {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+        .section {
+            background: var(--off-white);
+            border-radius: 2px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            border-top: 3px solid var(--gold);
+        }
+        .section h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--black);
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.5px;
+        }
+        .section p {
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .section p:last-child { margin-bottom: 0; }
+        /* Figure grid */
+        .figure-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .figure-item {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .figure-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+        .figure-caption {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.5;
+            font-style: italic;
+        }
+        /* For embedding interactive maps */
+        .map-embed {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
+            margin-top: 1rem;
+        }
+        /* Methods steps */
+        .methods-steps {
+            list-style: none;
+            counter-reset: steps;
+        }
+        .methods-steps li {
+            counter-increment: steps;
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        .methods-steps li::before {
+            content: counter(steps);
+            min-width: 1.75rem;
+            height: 1.75rem;
+            background: var(--gold);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.75rem; }
+            .container { padding: 2rem 1rem; }
+            .section { padding: 1.5rem; }
+            .figure-grid { grid-template-columns: 1fr; }
+            .map-embed { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <a href="/" class="back-link">← Back to Portfolio</a>
+
+        <header>
+            <h1>Cervidae Health: Mortality and Spatial Distribution of <em>E. coli</em> in White-tailed Deer</h1>
+            <p class="project-meta">University of Florida | Emerging Pathogens Institute | 2023 – Present</p>
+        </header>
+
+        <!-- OVERVIEW -->
+        <div class="section">
+            <h2>Overview</h2>
+            <p>Brief 2–3 sentence summary of the project question, why it matters, and the key finding.</p>
+        </div>
+
+        <!-- METHODS -->
+        <div class="section">
+            <h2>Methods</h2>
+            <ol class="methods-steps">
+                <li>Specimen collection and necropsy from farmed white-tailed deer across Florida surveillance program.</li>
+                <li>Bacterial isolation, culture, and phenotypic characterization of <em>E. coli</em> isolates.</li>
+                <li>Whole-genome sequencing on Illumina platform; assembly and quality control.</li>
+                <li>Phylogenetic reconstruction and comparative genomics to assess isolate diversity.</li>
+                <li>Spatial analysis in R and ArcGIS Pro to map mortality events and pathogen distribution across farm network.</li>
+            </ol>
+        </div>
+
+        <!-- DATA & FIGURES -->
+        <div class="section">
+            <h2>Data & Figures</h2>
+            <div class="figure-grid">
+                <div class="figure-item">
+                    <img src="figures/phylo_tree.png" alt="Phylogenetic tree of E. coli isolates">
+                    <p class="figure-caption">Figure 1. Maximum likelihood phylogeny of <em>E. coli</em> isolates recovered from white-tailed deer necropsies across Florida (2014–2020).</p>
+                </div>
+                <div class="figure-item">
+                    <img src="figures/spatial_map.png" alt="Spatial distribution map">
+                    <p class="figure-caption">Figure 2. Spatial distribution of mortality events and <em>E. coli</em> isolate recovery across Florida deer farms.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICATION LINK -->
+        <div class="section">
+            <h2>Related Publication</h2>
+            <p>Metrailer MC, et al. Phylogeographic patterns of <em>Escherichia coli</em> isolated from white-tailed deer during necropsy in a farmed deer surveillance program. <em>bioRxiv</em>. 2024. <a href="https://doi.org/your-doi" style="color: var(--gold-dark);">View preprint</a></p>
+        </div>
+
+        <footer>
+            <p>morgan.metrailer@ufl.edu | metrailer.callise@gmail.com</p>
+            <p>https://github.com/Morgan-Metrailer</p>
+        </footer>
+
+    </div>
+</body>
+</html>

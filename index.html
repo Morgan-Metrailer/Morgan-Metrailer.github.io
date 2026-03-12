@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morgan Callise Metrailer, M.S. | Medical Geographer & Infectious Disease
+Biologist</title>
+    <style>
+        /* Black, White, Gold Color Palette */
+        :root {
+            --black: #000000;
+            --charcoal: #1a1a1a;
+            --white: #ffffff;
+            --off-white: #fafafa;
+            --gold: #0909FF;
+            --gold-dark: #4B0150;
+            --gold-light: #728FCE;
+            --gray: #4a4a4a;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        header, .main-content, .links-section, .projects-section {
+            transition: transform 0.1s ease-out;
+            will-change: transform;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 3rem 2rem 2.5rem;
+            background: var(--off-white);
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            border-top: 3px solid var(--gold);
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--gold-dark);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+        .tagline {
+            font-size: 1rem;
+            color: var(--gray);
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 300;
+        }
+        .main-content {
+            background: var(--off-white);
+            border-radius: 2px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            border-top: 3px solid var(--gold);
+        }
+        .bio {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: justify;
+            color: var(--gray);
+        }
+        .links-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .link-card {
+            background: var(--white);
+            border-radius: 2px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+        .link-card:hover::before {
+            transform: scaleX(1);
+        }
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+            border-color: var(--gold);
+        }
+        .link-card h3 {
+            color: var(--black);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Segoe UI', sans-serif;
+            transition: color 0.3s ease;
+        }
+        .link-card:hover h3 {
+            color: var(--gold-dark);
+        }
+        .link-card p {
+            color: #666;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .projects-section {
+            background: var(--off-white);
+            border-radius: 2px;
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            border-top: 3px solid var(--gold);
+        }
+        .projects-section h2 {
+            color: var(--black);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        .project-link {
+            display: block;
+            background: var(--white);
+            border-radius: 2px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+        }
+        .project-link:last-child {
+            margin-bottom: 0;
+        }
+        .project-link:hover {
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+            border-left-color: var(--gold-dark);
+        }
+        .project-link h3 {
+            color: var(--black);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            font-family: 'Segoe UI', sans-serif;
+            transition: color 0.3s ease;
+        }
+        .project-link:hover h3 {
+            color: var(--gold-dark);
+        }
+        .project-link p {
+            color: var(--gray);
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+            .container {
+                padding: 2rem 1rem;
+            }
+            .main-content, .projects-section {
+                padding: 1.5rem;
+            }
+            .links-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Subtle animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .container > * {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        header { animation-delay: 0s; }
+        .main-content { animation-delay: 0.1s; }
+        .links-section { animation-delay: 0.2s; }
+        .projects-section { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Morgan Callise Metrailer, M.S.</h1>
+            <p class="subtitle">Medical Geographer & Infectious Disease
+Biologist</p>
+        </header>
+        <div class="main-content">
+            <div class="bio">
+                <p>Ph.D. candidate in Medical Geography and Global Health with five years of experience in infectious disease surveillance, spatial epidemiology, and microbial genomics. Skilled in GIS, network analysis, and statistical modeling in R and Python, alongside high-containment laboratory research. Demonstrated experience leading analytical workflows, mentoring junior researchers, and managing multi-site research projects within interdisciplinary teams. Proven ability to translate complex findings into actionable insights for public health and policy audiences. FBI/DOJ Federal Select Agent Program authorized. </p>
+            </div>
+        </div>
+        <div class="links-section">
+            <a href="https://Morgan-Metrailer.github.io/Metrailer_CV_Feb2026v3.html" target="_blank" rel="noopener noreferrer" class="link-card">
+                <h3>Curriculum Vitae</h3>
+            </a>
+            <a href="https://scholar.google.com/citations?user=W2aGkLYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="link-card">
+                <h3>Google Scholar</h3>
+            </a>
+            <a href="https://www.linkedin.com/in/morgan-metrailer" target="_blank" rel="noopener noreferrer" class="link-card">
+                <h3>LinkedIn</h3>
+            </a>
+            <a href="https://geog.ufl.edu/directory/morgan-metrailer/" target="_blank" rel="noopener noreferrer" class="link-card">
+                <h3>Institutional Profile</h3>
+            </a>
+        </div>
+          <div class="projects-section">
+              <h2>Research Projects (Published or in Review)</h2>
+              <a href="https://Morgan-Metrailer.github.io/projects/ecoli-deer/" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <h3>Cervidae Health - mortality and spatial distribution of <em>E. coli</em> in white-tailed deer</h3>
+                  <p>Spatial distributions, causes of mortality, and phylogenetics of white-tailed deer E. coli in Florida.</p>
+              </a>
+              <a href="https://Morgan-Metrailer.github.io/projects/sonla-banthracis/" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <h3>Outbreak Traceback - Combined spatial and genetic analyses of anthrax outbreak in Vietnam</h3>
+                  <p>Spatial and Phylogenetic Patterns Reveal Hidden Infection Sources of <em>Bacillus anthracis</em> in an Anthrax Outbreak in Son La Province, Vietnam.</p>
+              </a>
+          </div>
+        <footer>
+            <p>morgan.metrailer@ufl.edu | metrailer.callise@gmail.com</p>
+            <p>https://github.com/Morgan-Metrailer</p>            
+        </footer>
+    </div>
+    <!-- Parallax Scroll Effect -->
+    <script>
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const header = document.querySelector('header');
+        const mainContent = document.querySelector('.main-content');
+        const linksSection = document.querySelector('.links-section');
+        const projectsSection = document.querySelector('.projects-section');
+        if (header) header.style.transform = `translateY(${scrolled * 0.4}px)`;
+        if (mainContent) mainContent.style.transform = `translateY(${scrolled * 0.25}px)`;
+        if (linksSection) linksSection.style.transform = `translateY(${scrolled * 0.15}px)`;
+        if (projectsSection) projectsSection.style.transform = `translateY(${scrolled * 0.1}px)`;
+    });
+    </script>
+</body>
+</html>
